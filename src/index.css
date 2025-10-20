@@ -1,0 +1,45 @@
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+/* App theme tokens */
+:root {
+  --brand: #007aff;          /* accent */
+  --bg: #0b0f14;             /* dark */
+  --card: #111827;           /* neutral-900 */
+  --muted: #9ca3af;          /* gray-400 */
+  --ring: #3b82f6;           /* ring color */
+}
+body { background: var(--bg); color: #e5e7eb; } /* gray-200 */
+
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0.4;
+  }
+}
+
+.animate-scan {
+  animation: scan 1.5s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 1.2s linear infinite;
+}
+
