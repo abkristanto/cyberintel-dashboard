@@ -37,8 +37,13 @@ export default function DashboardPage() {
             {activeTag ? `Latest: ${activeTag}` : "Latest Articles"}
           </h2>
           {activeTag && (
-            <button onClick={() => setActiveTag(null)} className="text-sm text-blue-400 hover:underline">
-              Clear filter
+            <button
+              onClick={() => setActiveTag(null)}
+              className="flex items-center gap-1 text-xs font-mono text-cyber/80 hover:text-cyber hover:cursor-pointer transition-colors duration-200"
+              title="Clear current filter"
+            >
+              <span className="opacity-80">✕</span>
+              <span>Clear Filter</span>
             </button>
           )}
         </div>
