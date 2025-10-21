@@ -2,13 +2,13 @@ import { apiGet } from "./fetch";
 import type { Article, TagCount, SourceCount } from "../types/api";
 
 export const Api = {
-  latest: (limit = 30) =>
-    apiGet<{ articles: Article[] }>("/articles/latest", { limit }),
+  latest: (limit = 30, offset = 0) =>
+    apiGet<{ articles: Article[] }>("/articles/latest", { limit, offset }),
 
-  byTag: (tag: string, limit = 50) =>
+  byTag: (tag: string, limit = 50, offset = 0) =>
     apiGet<{ tag: string; articles: Article[] }>(
       `/articles/by_tag/${encodeURIComponent(tag)}`,
-      { limit }
+      { limit, offset }
     ),
 
   tags: (days = 7) =>
